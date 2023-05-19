@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <allegro5/allegro.h>
-
+#include <allegro5/allegro_image.h>
+#include <allegro5/allegro_primitives.h>
 #include "constants.h"
 #include "Game.h"
 
@@ -27,6 +28,8 @@ int main()
         event_queue = al_create_event_queue();
         timer = al_create_timer(1.0 / FPS);
         al_install_keyboard();
+        al_init_image_addon();
+        al_init_primitives_addon();
 
         al_register_event_source(event_queue, al_get_display_event_source(display));
         al_register_event_source(event_queue, al_get_timer_event_source(timer));

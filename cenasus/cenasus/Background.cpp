@@ -10,7 +10,13 @@ void Background::update() {
 	x -= 2;
 	if (x < -GAME_WIDTH) x = 0;
 }
-void Background:: render(){}
+void Background:: render(){
+	al_draw_scaled_bitmap(backgroundImage, 0, 0, al_get_bitmap_width(backgroundImage),
+		al_get_bitmap_height(backgroundImage), x, y, GAME_WIDTH, GAME_HEIGHT, 0);
+	al_draw_scaled_bitmap(backgroundImage, 0, 0, al_get_bitmap_width(backgroundImage),
+		al_get_bitmap_height(backgroundImage), GAME_WIDTH + x, y, GAME_WIDTH, GAME_HEIGHT, 0);
+
+}
 void Background::dispose() {
 
 al_destroy_bitmap(backgroundImage);

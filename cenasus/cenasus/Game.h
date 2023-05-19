@@ -1,4 +1,6 @@
 #pragma once
+#include "Background.h"
+#include "player.h"
 class Game
 {
 public:
@@ -11,6 +13,7 @@ public:
 
 
 private:
-
+	Background* background;
+	player player;
 };
 
